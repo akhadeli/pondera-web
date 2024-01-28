@@ -1,16 +1,11 @@
-import Navigation from './components/navigation'
 import { Button, Divider } from '@nextui-org/react'
 import Image from 'next/image'
-import Footer from './components/footer'
 import { FaStar } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <main className='flex flex-col items-center'>
-      <Navigation></Navigation>
-
+    <main className='gradients flex flex-col items-center'>
       {/* First Section */}
-
       <div className='flex flex-row items-center justify-between h-[550px] lg:gap-16 lg:max-w-[1024px] px-10'>
         <div className='flex flex-col gap-3'>
           <h1 className='font-semibold text-4xl'>Learning,<br></br> Studying, and<br></br> Revising is made <br></br>easier!</h1>
@@ -176,8 +171,23 @@ export default function Home() {
       </div>
 
       {/* Seventh Section */}
+      <div className='flex flex-row justify-around items-center max-w-[1024px] lg:w-[900px] my-20 gap-10 px-16 bg-white rounded-lg'>
+        <div className='flex flex-col gap-4'>
+          <h1 className='text-black font-semibold text-4xl'>Sign up now for<br></br>free!</h1>
+          <p className='text-black text-md'>Sign up now for free only at this time!</p>
+          <Button className='bg-[#f4ebe3] text-black text-sm font-semibold'>Sign up now</Button>
 
-      <Footer></Footer>
+        </div>
+        <Image
+            src="/start.png"
+            width={350}
+            height={350}
+            alt='start'
+          ></Image>
+      </div>
+      
+
+      
 
     </main>
   )

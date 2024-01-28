@@ -2,19 +2,104 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
+:root {
+  /* --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255; */
+  --secondary-glow: conic-gradient(
+    from 10deg at 50% 50%,
+    #254D4C 0deg,
+    #564147 55deg,
+    #BDA5AB 120deg,
+    #002120 160deg,
+    transparent 360deg
+  );
+
+  --third-glow: conic-gradient(
+    from 90deg at 50% 50%,
+    #FB4F93 0deg,
+    #28161C 160deg,
+    #D3FBD8 120deg,
+    #000000 55deg,
+    transparent 360deg
+  );
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
 } */
+
+main {
+  min-height: calc(100vh - 4rem - 16rem - 5rem);
+}
+
+.gradients::before,
+.gradients::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  opacity:0.6;
+}
+
+.gradients::before {
+  background: var(--secondary-glow);
+  border-radius: 50%;
+  width: 70vw;
+  height: 80vw;
+  filter:blur(90px);  
+  top: calc(150vh - 50vw/2);
+  left: calc(10vw );
+}
+
+.gradients::after {
+  background: var(--secondary-glow);
+  border-radius: 50%;
+  width: 20vw;
+  height: 24vw;
+  filter:blur(90px);
+  top: calc(50vh - 50vw/2);
+  left: calc(50vw - 50vw/2);
+}
+
+@keyframes animateBefore {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10vw) scale(0.8);
+
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes animateAfter{
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5vw) scale(1.2);
+
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.gradients::before {
+  /*...previous props*/
+  animation: animateBefore 10s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+}
+
+.gradients::after {
+  /*...previous props*/
+  animation: animateAfter 10s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+}
 
 /* body {
   color: rgb(var(--foreground-rgb));
