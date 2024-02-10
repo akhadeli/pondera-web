@@ -60,10 +60,10 @@ export default function Home() {
         <div className='flex flex-col gap-3'>
           <h3 className='text-[12px] font-bold'>ENHANCE LEARNING</h3>
           <h1 className='font-semibold text-3xl'>AI helps you by your curriculum!</h1>
-          <p className='max-w-96'>We are using a large language model (LLM) called Gemini Pro by Google to power our product to your satisfaction in your academic journey.</p>
+          <p className='max-w-96'>With the use of AI, we power our product to your satisfaction in your academic journey.</p>
           <p className='max-w-96'>As each curriculum and board is different, we use relevant resources to power and enhance the AI to give you quality and relevant responses in order to drive your experience!</p>
           <div className='flex flex-row gap-2'>
-            <Button variant='bordered' className='bg-black text-white font-semibold border-white border-1 px-7'>Try Now</Button>
+            <Button variant='bordered' className='bg-black text-white font-semibold border-white border-1 px-7'>Get Started</Button>
           </div>
         </div>
       </div>
@@ -185,10 +185,6 @@ export default function Home() {
             alt='start'
           ></Image>
       </div>
-      
-
-      
-
     </main>
   )
 }
